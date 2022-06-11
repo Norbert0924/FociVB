@@ -55,18 +55,6 @@ public class Main {
 
         return totalGoalsByStage;
 
-    /*private static LinkedHashMap<String, Integer> goalsPerStage(Map<Integer, WorldCup> worldCupResult) throws IOException {
-
-        LinkedHashMap<String, Integer> res = new LinkedHashMap();
-
-        for (WorldCup wc : worldCupResult.values())
-            for(WorldCupResult wcresult : wc.getResults())
-                if (wc.getHost().equals("Brazil"))
-
-                    res.put(wcresult.getStage(), res.getOrDefault(wcresult.getStage(), 0) + wcresult.goalSum());
-
-
-                    return res;*/
     }
 
     private static int teamAWins(Map<Integer, WorldCup> worldCupResult) throws IOException {

@@ -1,0 +1,90 @@
+/*ELMÉLET / 1. (5P)
+• Mi a különbség az Exception és a RuntimeException között?
+• Hogyan kell őket használni?
+• Mire érdemes figyelni a kezelésüknél*/
+
+
+CHECKED kivetelek:
+
+amiket a compiler maga is ellenőríz.
+Amikor eldobod, akkor vagy helyben kezelned kell,
+vagy meg kell jelölnöd a metódus throws deklarációjában,
+különben a kódod le se fog futni.
+Ezek az  Exception osztályból örökíthetőek le.
+ Try catch szüseges itt a kezeleshez.
+
+UNCHECKED kivetelek:
+
+fordítási időben nem kerülnek ellenőrzésre.
+ try/catch blokk nélkül használhatóak
+ és még a fenti throws-al se kell jelezni őket.
+ A RuntimeException osztályból örökithetöek le.
+
+
+
+
+
+
+
+/*ELMÉLET / 2. (5P)
+
+• Hogyan tudunk egy kollekcióból bejárás közben elemeket törölni?
+• Mutasd be egy vázlatosan (kóddal) az elemek törlésének a módját*/
+
+List<Integer> numbers = new ArrayList<>();
+        numbers.add(5);
+        numbers.add(2);
+        numbers.add(2);
+        numbers.add(5);
+
+
+
+        Iterator<Integer> numbersIterator = numbers.iterator();
+        while (numbersIterator.hasNext()) {
+            Integer nextElement = numbersIterator.next();
+            if (nextElement == 2) {
+                numbersIterator.remove();
+            }
+        }
+
+
+
+
+/*ELMÉLET / 3. (5P)
+• Ismertesd röviden az OOP koncepciókat a Java-ban*/
+/*
+
+Fö koncepciok:
+absztrakció
+egyszerű dolgok összetettebb működést reprezentálnak, csak a
+
+encapsulation
+csak az fér hozzá egy adott dologhoz, ami azt birtokolja: getterek: hozzaferes, setterek: ertekek megadas
+private lathatosagi jelzöt hasznalunk itt a getterek es setterek miatt
+
+inheritance
+ egy osztály egy másiktól örököl, többszörös örökölödes javaban nem megengedett
+ A gyerek osztaly örökli az anya osztaly publikus field-jeit.
+
+polymorphism
+egy metódus ugyanazon a néven más osztályban mást csinál
+Ezt el lehet erni a következö modon:
+@overloading
+a metódusoknak más típusú és/vagy más darabszámú bemeneti
+paraméterük van
+
+@overriding
+öröklődés esetén használható
+a Gyerek osztály felülírja a Szülő osztály metódusát*/
+
+/*ELMÉLET / 4. (5P)
+
+• Milyen adatszerkezet segítségével lehetne a gyakorlati feladatok alatt
+beolvasott meccsek adatait mindig dátum szerint rendezett sorrendben
+tárolni?
+
+TreeSet kellene kepezni a List<WorldCupResult> results = new ArrayList(); bol,
+es ehhez kellene e Comparator interface-t alkalmazni a WorldCupResult osztalyon.
+
+• Mit kellene a meccsek adatait tároló osztálynál változtatni, hogy képes
+legyen az adatszerkezettel együttműködni*/
